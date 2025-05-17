@@ -3,8 +3,6 @@
 **Climinha** é um aplicativo simples de previsão do tempo desenvolvido em .NET MAUI, que consome a API do [OpenWeatherMap](https://openweathermap.org/).
 Ele exibe informações básicas sobre o clima atual de qualquer cidade do mundo, como temperatura, sensação térmica, condição do tempo, umidade e velocidade do vento.
 
-> Projeto criado com foco educacional para aprendizado em desenvolvimento de aplicativos multiplataforma com .NET MAUI.
-
 ---
 
 ## 🚀 Funcionalidades
@@ -41,10 +39,11 @@ Funcionalidades futuras planejadas:
 ## ⚙️ Como usar
 
 1. **Clone o repositório**:
-   ```bash
+
+```bash
    git clone https://github.com/naldobr-dev/Climinha.git
    cd Climinha
-  ```
+```
 
 2. **Adicione sua chave da API do OpenWeatherMap**:
 
@@ -52,13 +51,13 @@ Funcionalidades futuras planejadas:
    * Renomeie esse arquivo para `secrets.json`.
    * Substitua o `SUA-CHAVE-AQUI` por sua chave da API obtida em [OpenWeatherMap API](https://openweathermap.org/api):
 
-     ```json
-     {
-       "OpenWeather": {
-         "ApiKey": "SUA-CHAVE-AQUI"
-       }
-     }
-     ```
+ ```json
+ {
+   "OpenWeather": {
+     "ApiKey": "SUA-CHAVE-AQUI"
+   }
+ }
+ ```
 
 3. **Compile e execute o projeto**:
 
