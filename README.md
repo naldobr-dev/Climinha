@@ -32,19 +32,6 @@ Funcionalidades futuras planejadas:
 
 ---
 
-## 📦 Instalação
-
-Clone o repositório:
-
-```bash
-git clone https://github.com/naldobr-dev/Climinha.git
-```
-
-Abra a solução no **Visual Studio 2022** ou superior com suporte a .NET MAUI.
-Configure sua **API Key** no código para autenticar com o OpenWeatherMap.
-
----
-
 ## 🖼️ Screenshots
 
 ![Screenshot do Climinha](Screenshot.png)
