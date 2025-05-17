@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Climinha.MainPage"
+             BackgroundColor="Transparent"
+             Title="Climinha">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="{StaticResource SkyBlue}" Offset="0.0" />
+            <GradientStop Color="{StaticResource AquaBlue}" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,0,20,20" Spacing="0">
+            
+            <!-- Título -->
+            <Label Text="Climinha 🌦"
+                   Style="{StaticResource TitleLabel}" />
+            
+            <!-- Compo para digitar cidade -->
+            <Border Style="{StaticResource EntryBorder}">
+                <Entry x:Name="cidadeEntry"
+                       Placeholder="Digite o nome da cidade..."
+                       ReturnType="Search" Completed="OnBuscarClicked">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeWord</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
+            </Border>
+
+            <!-- Botão de buscar -->
+            <Button Text="Buscar Clima" Clicked="OnBuscarClicked" />
+
+            <!-- Resultado -->
+            <Label Text="{Binding City}" Style="{StaticResource LabelCity}" />
+
+            <Image x:Name="iconImage"
+                   HeightRequest="120"
+                   WidthRequest="200"
+                   Aspect="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,10" />
+
+            <Label Text="{Binding Description}" Style="{StaticResource LabelCondition}" />
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image x:Name="tempIconImage"
+                       Source="termometro_icon.svg"
+                       HeightRequest="50"
+                       Margin="0,-13,-5,0"
+                       IsVisible="Collapse" />
+                <Label Text="{Binding TemperatureInt, StringFormat='{0}°'}"
+                       Style="{StaticResource LabelTemperature}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image x:Name="humidityIconImage"
+                       Source="humidity_icon.png"
+                       HeightRequest="36"
+                       Margin="0,0,4,0"
+                       IsVisible="Collapse" />
+                <Label Text="{Binding Humidity, StringFormat='{0}%'}" Style="{StaticResource LabelWindSpeed}" />
+
+                <Label Text=" " WidthRequest="30" />
+
+                <Image x:Name="windIconImage"
+                       Source="wind_icon.png"
+                       HeightRequest="36"
+                       Margin="0,-4,0,0"
+                       IsVisible="Collapse" />
+                <Label Text="{Binding WindSpeed, StringFormat='{0} km/h'}" Style="{StaticResource LabelWindSpeed}" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
